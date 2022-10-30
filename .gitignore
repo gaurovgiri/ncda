@@ -1,0 +1,9 @@
+# Ignore .vscode directory
+.vscode/
+
+# Ignore all binaries
+!(bin/.gitkeep)
+
+# Ignore tmp files
+tmp
+tmp.c
