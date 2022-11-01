@@ -3,7 +3,12 @@
 
 #include <dirent.h>
 
-struct dirent **dirList(const char *);
+struct directoryList
+{
+    struct dirent **nameList;
+    int no;
+};
 
+struct directoryList dirList(const char *);
 
 #endif // DIRLIST
