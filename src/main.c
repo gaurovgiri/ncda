@@ -43,8 +43,19 @@ int main()
             break;
 
         case '\n':
-            list = dirList(list.nameList[index]->d_name);
-            index = 0;
+            if (isDir(list.nameList[index]->d_name))
+            {
+                list = dirList(list.nameList[index]->d_name);
+                index = 0;
+            }
+            else
+            {
+                //alert()
+                WINDOW *alertWin = newwin(0,0,0,0);
+                wprintw(alertWin,"%s is not a directory",list.nameList[index]->d_name);
+                wrefresh(alertWin);
+                getch();
+            }
             break;
 
         default:

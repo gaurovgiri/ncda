@@ -11,4 +11,6 @@ struct directoryList
 
 struct directoryList dirList(const char *);
 
+int isDir(const char *);
+
 #endif // DIRLIST
