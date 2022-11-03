@@ -46,7 +46,9 @@ int main()
         case '\n':
             if (isDir(list.nameList[index]->d_name))
             {
-                list = dirList(list.nameList[index]->d_name);
+                chdir(list.nameList[index]->d_name);
+                getcwd(cwd,sizeof(cwd));
+                list = dirList(cwd);
                 index = 0;
             }
             else

@@ -14,8 +14,9 @@ OBJECTS=\
 		build/alert.o\
 		build/screen.o\
 
+all: $(TARGET)
 
-all: $(OBJECTS)
+$(TARGET): $(OBJECTS)
 	$(CC) $(OBJECTS) $(CFLAGS) -o $(BINARY)$(TARGET)
 
 build/dirList.o: src/dirList.c

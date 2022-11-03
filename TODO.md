@@ -1,4 +1,4 @@
 - [x] Directory Listing - Recursively
 - [x] Menu and Traversing
-- [ ] Check for file and folder
+- [x] Check for file and folder
 - [ ] Disk Usage 
