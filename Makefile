@@ -1,29 +1,26 @@
 CC=gcc
 TARGET=main
-SOURCEDIR=src/
-BUILDDIR=build/
-BINARY=bin/
-HEADERS=include/
+SOURCEDIR=src
+BUILDDIR=build
+BINARY=bin
+HEADERS=include
 
-CFLAGS= -Wall -I $(HEADERS) -lncurses
+CFLAGS= -Wall -Wextra -I $(HEADERS) -lncurses
 
-OBJECTS=\
-		build/dirList.o\
-		build/main.o\
-		build/menu.o\
-		build/alert.o\
-		build/screen.o\
+SOURCES = $(wildcard $(SOURCEDIR)/*.c)
+
+OBJECTS = $(patsubst $(SOURCEDIR)/%.c,$(BUILDDIR)/%.o,$(SOURCES))
 
 all: $(TARGET)
 
 $(TARGET): $(OBJECTS)
-	$(CC) $(OBJECTS) $(CFLAGS) -o $(BINARY)$(TARGET)
+	$(CC) $(OBJECTS) $(CFLAGS) -o $(BINARY)/$(TARGET)
 
-$(BUILDDIR)%.o: $(SOURCEDIR)%.c
-	$(CC) -c $^ -I $(HEADERS) -o $@
+$(BUILDDIR)/%.o: $(SOURCEDIR)/%.c
+	$(CC) -c $< -I $(HEADERS) -o $@
 
 run:
-	./$(BINARY)$(TARGET)
+	./$(BINARY)/$(TARGET)
 
 clean:
-	rm -rf $(BUILDDIR)* $(BINARY)*
+	rm -rf $(BUILDDIR)/* $(BINARY)/*
