@@ -2,4 +2,5 @@
 - [x] Menu and Traversing
 - [x] Check for file and folder
 - [x] Disk Usage
-- [ ] Improve the quality of disk usage
+- [ ] Improve the quality of disk usage: precalculate disk space and create a struct using it that stores the disk space and its name
+- [ ] Create new screen for each directory?
